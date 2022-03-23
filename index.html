@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Child</title>
+</head>
+<body>
+    <div id="imgdisp">
+        <!-- <img src="img1.jpg" alt="" srcset=""> -->
+    </div>
+    <style>
+        #imgdisp{
+            width:100px;
+            height:100px;
+        }
+        #imgdisp img{
+            width:100%;
+            height:100%;
+        }
+        button{
+            cursor:pointer;
+        }
+    </style>
+    <button id="getimg">Get Image</button>
+    <script>
+        var image=document.createElement('img')
+        obj=["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg","img6.jpg"
+        ]
+      
+        document.getElementById('getimg').addEventListener('click',()=>{
+            var index=Math.floor(Math.random()*6);
+            let  disp=document.getElementById('imgdisp')
+            console.log(disp)
+            image.src=obj[index];
+            disp.replaceChild(image, disp.lastChild)
+        })
+    </script>
+</body>
+</html>
